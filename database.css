@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box; /* The width and height properties of an element contain the content, padding, and border, but not the margin. */
+    margin: 0; /* The space between two different elements */
+    padding: 0; /* The space between the content and the border of an element */
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* The overflow on the x and y axis of the website. */ 
+    background: #22222A;
+    font-family: 'Fira Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    font-size: .88rem; /* rem : a CSS unit which is relative to the font size of the html element. 16px = 1rem. 
+                          em : a CSS unit which is relative to the font size of the parent element. 16px = 1.5em. */
+    color: #bdbdd5;
+  }
+  
+  .content-width {
+    width: 86%;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex; /* You use display flex if you want to display your items individually at different spots in a container, 
+                      you can flex your items around, you can also shrink and grow them with the browser size. */
+    flex-direction: column; /* Where the items flex to, column or row. */
+    justify-content: space-around; /* How you want to be the items dispayed, same amount of space inbetween the items or around the items etc. */
+  }
+  
+  .slideshow-items {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .item {
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
+  
+  .item-image-container {
+    position: relative;
+    width: 42%;
+  }
+  
+  .item-image-container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 101%;
+    height: 101%;
+    background: #22222A;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .item-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    display: block;
+    transition: opacity .3s ease-out .45s; /* transition: property name | duration | timing-function | delay.  */
+  }
+  
+  .item.active .item-image {
+    opacity: 1;
+  }
+  
+  .item.active .item-image-container::before {
+    opacity: .8;
+  }
+  
+  .item-description {
+    position: absolute;
+    top: 182px;
+    right: 0;
+    width: 50%;
+    padding-right: 4%;
+    line-height: 1.8;
+  }
+  
+  /* Staggered Vertical Items ------------------------------------------------------*/
+  .item-header {
+    position: absolute;
+    top: 150px;
+    left: -1.8%;
+    z-index: 100;
+  }
+  
+  .item-header .vertical-part {
+    margin: 0 -4px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: auto;
+    font-size: 7vw;
+    color: #fff;
+  }
+  
+  .vertical-part {
+    overflow: hidden; 
+    display: inline-block; /* Elements will take up only the amount of space needed to fit the content inside them, 
+                              but a manual width or height can be set. */
+  }
+  
+  .vertical-part b {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+  
+  .item-header .vertical-part b {
+    transition: .5s;
+  }
+  
+  .item-description .vertical-part b {
+    transition: .21s;
+  }
+  
+  .item.active .item-header .vertical-part b {
+    transform: translateY(0);
+  }
+  
+  .item.active .item-description .vertical-part b {
+    transform: translateY(0);
+  }
+  
+  /* Controls ----------------------------------------------------------------------*/
+  .controls {
+    position: relative;
+    text-align: right;
+    z-index: 1000;
+  }
+  
+  .controls ul {
+    list-style: none;
+  }
+  
+  .controls ul li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    background:#bdbdd5;
+    cursor: pointer;
+  }
+  
+  .controls ul li.active {
+    background:#6a6a77;
+  }
+  
+  /* Button ----------------------------------------------------------------------*/
+  
+  
+  .button{
+    border: 2px solid #bdbdd5;
+    background-color: #22222A;
+    color: #bdbdd5;
+    padding: 6px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fira Mono', monospace;
+    font-size: 16px;
+    margin: 50px 210px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .button:hover{
+    background-color: #bdbdd5;
+    color: #22222A;
+    border: 2px solid #22222A;
+  }

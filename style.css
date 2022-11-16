@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* The overflow on the x and y axis of the website. */ 
+    background: #22222A;
+    font-family: 'Fira Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    font-size: .88rem; /* rem : a CSS unit which is relative to the font size of the html element. 16px = 1rem. 
+                          em : a CSS unit which is relative to the font size of the parent element. 16px = 1.5em. */
+    color: #dedeff;
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .content {
+    width: 20vw;
+    height: 100vh;
+    opacity: 0.5;
+    transition: 0.4s ease-out;
+  }
+
+  .text {
+    opacity: 1;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .circle .circle-text {
+    opacity: 0;
+    transition: 0.4s ease-out;
+    height: 125px;
+    width: 125px;
+    background: #22222A;
+    border-radius: 50%;
+    margin-top: 75%;
+    margin-left: 28%;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #dedeff;
+    padding-top: 15%;
+    text-align: center;
+  }
+
+  .content:hover {
+    opacity: 1;
+  }
+
+  .content:hover .circle .circle-text {
+    opacity: 1;
+  }
+
+  .content-groei {
+    background-image: url("Images/Layer 1.jpg");
+  }
+
+  .content-trots {
+    background-image: url("Images/Layer 3.jpg");
+  }
+
+  .content-plezier {
+    background-image: url("Images/Layer 2.jpg");
+  }
+  
+  .content-eigenheid {
+    background-image: url("Images/Layer 4.jpg");
+  }
+
+  .content-zelfvertrouwen {
+    background-image: url("Images/Layer 5.jpg");
+  }
